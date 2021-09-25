@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete
@@ -25,9 +26,20 @@ namespace DataAccess.Concrete
                 new Car{BrandId = 2,CarId = 6, ColorId = 1,DailyPrice = 250,ModelYear = 2013 ,Description = "Al bin git." }
             };
         }
+
+        public void Add(Car entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddCar(Car car)
         {
             _cars.Add(car);
+        }
+
+        public void Delete(Car entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void DeleteCar(Car car)
@@ -36,14 +48,29 @@ namespace DataAccess.Concrete
             _cars.Remove(carToDelete);
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
             return _cars;
         }
 
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetById(int Id)
         {
             return _cars.Where(o => o.CarId == Id).ToList();
+        }
+
+        public void Update(Car entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateCar(Car car)
