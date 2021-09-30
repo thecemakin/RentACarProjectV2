@@ -18,13 +18,13 @@ namespace DataAccess.Concrete
         public InMemoryCarDal()
         {
             _cars = new List<Car>
-            {
-                new Car{BrandId = 1,CarId = 1, ColorId = 1,DailyPrice = 250,ModelYear = 2012 , Description = "Al bin git." },
-                new Car{BrandId = 2,CarId = 2, ColorId = 1,DailyPrice = 500,ModelYear = 2018 ,Description = "Al bin git." },
-                new Car{BrandId = 2,CarId = 3, ColorId = 3,DailyPrice = 1000,ModelYear = 2021 ,Description = "Al bin git." },
-                new Car{BrandId = 3,CarId = 4, ColorId = 2,DailyPrice = 750,ModelYear = 2017 ,Description = "Al bin git." },
-                new Car{BrandId = 1,CarId = 5, ColorId = 2,DailyPrice = 250,ModelYear = 2014 ,Description = "Al bin git." },
-                new Car{BrandId = 2,CarId = 6, ColorId = 1,DailyPrice = 250,ModelYear = 2013 ,Description = "Al bin git." }
+            { 
+                new Car{BrandId = 1,CarId = 1, ColorId = 1,DailyPrice = 250,ModelYear = "250" , Description = "Al bin git." },
+                new Car{BrandId = 2,CarId = 2, ColorId = 1,DailyPrice = 250,ModelYear = "250" ,Description = "Al bin git." },
+                new Car{BrandId = 2,CarId = 3, ColorId = 3,DailyPrice = 250,ModelYear = "250" ,Description = "Al bin git." },
+                new Car{BrandId = 3,CarId = 4, ColorId = 2,DailyPrice = 250,ModelYear = "250" ,Description = "Al bin git." },
+                new Car{BrandId = 1,CarId = 5, ColorId = 2,DailyPrice = 250,ModelYear = "250" ,Description = "Al bin git." },
+                new Car{BrandId = 2,CarId = 6, ColorId = 1,DailyPrice = 250,ModelYear = "250" ,Description = "Al bin git." }
             };
         }
 
@@ -69,6 +69,14 @@ namespace DataAccess.Concrete
             return _cars.Where(o => o.CarId == Id).ToList();
         }
 
+<<<<<<< HEAD
+        public List<CarDetailDTO> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+=======
+>>>>>>> 7997ff351badfac3fbb4105f9af98cc2abe78bc1
         public List<CarDetailDTO> GetProductDetails()
         {
             throw new NotImplementedException();

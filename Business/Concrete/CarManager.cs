@@ -17,9 +17,22 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+<<<<<<< HEAD
+        public void add(Car car)
+        {
+            if (car.DailyPrice < 0)
+            {
+                Console.WriteLine("Araç Fiyatı sıfır olamaz.");
+            }
+            
+            
+            else{ _carDal.Add(car); }
+            
+=======
         public void Add(Car car)
         {
             _carDal.Add(car);
+>>>>>>> 7997ff351badfac3fbb4105f9af98cc2abe78bc1
         }
 
         public void Delete(Car car)
@@ -44,7 +57,11 @@ namespace Business.Concrete
 
         public List<CarDetailDTO> GetCarDetails()
         {
+<<<<<<< HEAD
+            return _carDal.GetCarDetails();
+=======
             return _carDal.GetProductDetails();
+>>>>>>> 7997ff351badfac3fbb4105f9af98cc2abe78bc1
         }
 
         public void Update(Car car)
