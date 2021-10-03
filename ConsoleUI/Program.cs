@@ -19,15 +19,9 @@ namespace ConsoleUI
 
 
 
-            Car car2 = new Car();
-            car.BrandId = 2;
-            car.ColorId = 1;
-            car.DailyPrice = 10;
-            car.Description = "sdsvsd";
-            car.ModelName = "wrewf";
 
             CarManager carManager = new CarManager(new EfCarDal());
-            carManager.add(car2);
+            carManager.Add(car);
 
             Console.WriteLine(carManager.GetCarDetails());
 

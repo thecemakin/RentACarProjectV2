@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -17,56 +19,51 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-<<<<<<< HEAD
-        public void add(Car car)
+        public IResult Add(Car car)
         {
             if (car.DailyPrice < 0)
             {
-                Console.WriteLine("Araç Fiyatı sıfır olamaz.");
+               return new ErrorDataResult<Car>(Messages.CarNameInvalid);
             }
             
             
-            else{ _carDal.Add(car); }
+            else{
+                _carDal.Add(car);
+                return new SuccessDataResult<Car>(Messages.CarAdded); }
             
-=======
-        public void Add(Car car)
-        {
-            _carDal.Add(car);
->>>>>>> 7997ff351badfac3fbb4105f9af98cc2abe78bc1
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carDal.Delete(car);
+           return new SuccessDataResult<Car> (Messages.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            
+            return new SuccessDataResult<List<Car>> (_carDal.GetAll());
         }
 
-        public List<Car> GetByDailyPrice(int min, int max)
+        public IDataResult<List<Car>> GetByDailyPrice(int min, int max)
         {
-            return _carDal.GetAll(p=>p.DailyPrice >= min && p.DailyPrice <= max);
+            return new SuccessDataResult<List<Car>> (_carDal.GetAll(p=>p.DailyPrice >= min && p.DailyPrice <= max));
         }
 
-        public Car GetById(int id)
+        public IDataResult<Car> GetById(int id)
         {
-            return _carDal.Get(p=>p.CarId ==id);
+            return new SuccessDataResult<Car> (_carDal.Get(p=>p.CarId ==id));
         }
 
-        public List<CarDetailDTO> GetCarDetails()
+        public IDataResult<List<CarDetailDTO>> GetCarDetails()
         {
-<<<<<<< HEAD
-            return _carDal.GetCarDetails();
-=======
-            return _carDal.GetProductDetails();
->>>>>>> 7997ff351badfac3fbb4105f9af98cc2abe78bc1
+            return new SuccessDataResult<List<CarDetailDTO>> (_carDal.GetCarDetails());
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
-            _carDal.Update(car);
+           _carDal.Update(car);
+            return new SuccessDataResult<Car>(Messages.CarUpdated);
         }
     }
 }

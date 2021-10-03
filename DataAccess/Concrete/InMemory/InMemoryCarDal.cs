@@ -69,14 +69,11 @@ namespace DataAccess.Concrete
             return _cars.Where(o => o.CarId == Id).ToList();
         }
 
-<<<<<<< HEAD
         public List<CarDetailDTO> GetCarDetails()
         {
             throw new NotImplementedException();
         }
 
-=======
->>>>>>> 7997ff351badfac3fbb4105f9af98cc2abe78bc1
         public List<CarDetailDTO> GetProductDetails()
         {
             throw new NotImplementedException();
