@@ -42,17 +42,17 @@ namespace Business.Concrete
         public IDataResult<List<Car>> GetAll()
         {
             
-            return new SuccessDataResult<List<Car>> (_carDal.GetAll());
+            return new SuccessDataResult<List<Car>> (_carDal.GetAll(),Messages.CarListed);
         }
 
         public IDataResult<List<Car>> GetByDailyPrice(int min, int max)
         {
-            return new SuccessDataResult<List<Car>> (_carDal.GetAll(p=>p.DailyPrice >= min && p.DailyPrice <= max));
+            return new SuccessDataResult<List<Car>> (_carDal.GetAll(p=>p.DailyPrice >= min && p.DailyPrice<= max));
         }
 
-        public IDataResult<Car> GetById(int id)
+        public IDataResult<Car> GetById(int carId)
         {
-            return new SuccessDataResult<Car> (_carDal.Get(p=>p.CarId ==id));
+            return new SuccessDataResult<Car> (_carDal.Get(p=>p.CarId == carId));
         }
 
         public IDataResult<List<CarDetailDTO>> GetCarDetails()
