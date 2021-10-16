@@ -23,13 +23,15 @@ namespace Business.Concrete
         {
             if (car.DailyPrice < 0)
             {
-               return new ErrorDataResult<Car>(Messages.CarNameInvalid);
+                return new ErrorDataResult<Car>(Messages.CarNameInvalid);
             }
-            
-            
-            else{
+
+
+            else
+            {
                 _carDal.Add(car);
-                return new SuccessDataResult<Car>(Messages.CarAdded); }
+                return new SuccessDataResult<Car>(Messages.CarAdded);
+            }
             
         }
 

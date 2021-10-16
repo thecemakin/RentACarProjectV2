@@ -12,17 +12,23 @@ namespace ConsoleUI
 
         public static void Main(string[] args)
         {
-           TestUsers();
-
-             //GetCarDetail();
-
-            
+            //TestUsers();
+            //GetCarDetail();
+            TestBrands();
 
 
 
 
+        }
 
-
+        public static void TestBrands()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            brandManager.Add(new Brand { BrandName = "Lexus" });
+            foreach (var brand in brandManager.GetAll().Data)
+            {
+                Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
+            }
         }
 
         public static void GetCarDetail()

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-   public class EfCustomerDal : EfEntitiyReporsitoryBase<Customer, RentACarProjectContext>,ICustomerDal
+    public class EfCustomerDal : EfEntitiyReporsitoryBase<Customer, RentACarProjectContext>,ICustomerDal
     {
 
     }
